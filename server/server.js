@@ -17,7 +17,7 @@ io.on('connection', (socket) => {
 	socket.emit('newMessage', {
 		from: 'User 2',
 		text: 'Got your message',
-		createdAt: 'timestamp'
+		createdAt: new Date().getTime()
 	});
 
 	socket.on('createMessage', (message) => {
