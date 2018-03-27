@@ -17,14 +17,12 @@ describe('generateMessage', () => {
 describe('generateLocationMessage', () => {
 	it('should generate correct location object', () => {
 		from = 'Admin';
-		lat = 1;
-		lon = 1;
+		lat = 100;
+		lon = 19;
+		url = 'https://www.google.com/maps?q=100,19';
 		location = generateLocationMessage(from, lat, lon);
 
-		expect(location).toInclude({
-			from: from,
-			url: `https://www.google.com/maps?q=${lat},${lon}`
-		});
 		expect(location.createdAt).toBeA('number');
+		expect(location).toInclude({from, url});
 	})
 });
